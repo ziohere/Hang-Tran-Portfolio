@@ -1,0 +1,153 @@
+body    {
+    background-color: #f0e6f6;
+    font-family: 'Comic Relief', cursive;
+}
+.contact-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.contact-title {
+  font-family: "Comic Relief", system-ui;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #e597f9;
+  -webkit-text-stroke: 2px #2727a4;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-link {
+  text-decoration: none;
+  font-family: "Sour Gummy", system-ui;
+  font-size: 1.4rem;
+  color: white;
+
+  background: #e597f9;
+  border: 4px solid #2727a4;
+  border-radius: 999px;
+  padding: 0.8rem 1.8rem;
+
+  box-shadow: 0 6px 0 #2727a4;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-link:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  box-shadow: 0 10px 0 #2727a4;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+  opacity: 0.3;
+  background-repeat: repeat-y;
+  animation-name: background-float;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes background-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+.sticku-image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+  height: auto;
+
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Bounce animation */
+@keyframes sticku-bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Hover triggers animation */
+.sticku-image:hover {
+  animation: sticku-bounce 0.5s ease-in-out;
+}
+.sticku-image {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.sticku-image:hover {
+  animation: sticku-bounce 0.5s ease-in-out;
+}
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Button */
+.dropdown-btn {
+  background-color: #2727a4;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-family: "sour gummy", system-ui;
+  border-radius: 10%;
+}
+
+/* Menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  font-family: "Comic Relief", system-ui;
+}
+
+/* Menu items */
+.dropdown-content a {
+  color: #2727a4;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show menu */
+.show {
+  display: block;
+}
+/* Top bar */
+.dropdown {
+  position: fixed; /* sticks to top */
+  top: 20px;
+  right: 20px; /* change to left: 20px if you want */
+  z-index: 1000; }
